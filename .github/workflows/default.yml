@@ -46,6 +46,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Build converter
-      run: cd tools; go build
+      run: cd tools; go mod download golang.org/x/tools; go build
     - name: Prepare source files list
       run: cd src; go build -a -n 2>&1 >/dev/null | grep "compile -o" | grep "\./" | grep -oEi "\./([a-zA-Z_0-9]*\.go)"
