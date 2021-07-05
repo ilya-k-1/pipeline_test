@@ -35,6 +35,9 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
   gobuild:
+
+    runs-on: ubuntu-latest
+
     steps:
     - name: Install Go
       uses: actions/setup-go@v2
