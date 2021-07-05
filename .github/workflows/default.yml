@@ -46,7 +46,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Fetch the tools
-      uses: actions/setup-go@v2
+      uses: actions/checkout@v2
       with:
         repository: ilya-k-1/golang_analysis
         token: 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
