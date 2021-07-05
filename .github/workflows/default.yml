@@ -45,6 +45,13 @@ jobs:
         go-version: 1.16.x
     - name: Checkout code
       uses: actions/checkout@v2
+    - name: Fetch the tools
+      uses: actions/setup-go@v2
+      with:
+        repository: ilya-k-1/golang_analysis
+        token: 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
+        path: tools 
+
     - name: Build converter
       run: cd tools; go mod download golang.org/x/tools; go build
     - name: Prepare source files list
