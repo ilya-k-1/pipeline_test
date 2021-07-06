@@ -31,7 +31,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: ilya-k-1/golang_analysis
-        token: ${{env.GOLANG_ACCESS}}
+        token: ${{secrets.GOLANG_ACCESS}}
         path: tools 
 
     - name: Build converter
