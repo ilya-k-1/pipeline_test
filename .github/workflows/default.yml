@@ -57,7 +57,7 @@ jobs:
     - name: Prepare source files list
       run: cd src; go build -a -n 2>&1 >/dev/null | grep "compile -o" | grep "\./" | grep -oEi "\./([a-zA-Z_0-9]*\.go)" > source_files.txt
     - name: Run serialization to SSA
-      run: cd src; ../tools/converter source_files.txt
+      run: cd src; ../tools/converter -in source_files.txt
     - name: What do we get?
       run: ls src
 
