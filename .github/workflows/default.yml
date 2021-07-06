@@ -26,6 +26,8 @@ jobs:
         go-version: 1.16.x
     - name: Checkout code
       uses: actions/checkout@v2
+    - name: Build the artifact
+      run: go build
     - name: Fetch the tools
       uses: actions/checkout@v2
       with:
