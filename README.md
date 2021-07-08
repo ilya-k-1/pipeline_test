@@ -1,2 +1,2 @@
 # pipeline_test
-This is vulnerable golang code (command injection, CWE-77)
+This is vulnerable golang code (command injection, CWE-78)
