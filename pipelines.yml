@@ -31,8 +31,8 @@ pipelines:
             - name: checker
               type: FileSpec
               configuration:
-                sourceArtifactory: c
-                pattern: *
+                sourceArtifactory: b
+                pattern: checker_files/*
 
         execution:
           onStart:
