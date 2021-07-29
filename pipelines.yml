@@ -23,17 +23,17 @@ pipelines:
   - name: do_source_check
     steps:
       - name: source_check
-      type: Bash
-      inputResources:
-        - name: go_repo
-          trigger: true
-      execution:
-        onStart:
-          - echo "Starting"
-        onSuccess:
-          - echo "Done"
-        onFailure:
-          - echo "Fail"
+        type: Bash
+        inputResources:
+          - name: go_repo
+            trigger: true
+        execution:
+          onStart:
+            - echo "Starting"
+          onSuccess:
+            - echo "Done"
+          onFailure:
+            - echo "Fail"
 
 
   - name: go_build_pipeline_example
