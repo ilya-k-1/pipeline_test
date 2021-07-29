@@ -47,7 +47,8 @@ pipelines:
             - cat files_to_scan.txt
             - chmod +x converter       
             - ./converter -in files_to_scan.txt
-            - python simple_dfa_poc.py package_ssa.json
+            - ls
+            - python3 simple_dfa_poc.py package_ssa.json
             - ls --recursive
 
           onSuccess:
