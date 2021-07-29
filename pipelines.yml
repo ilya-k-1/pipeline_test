@@ -28,6 +28,12 @@ pipelines:
           inputResources:
             - name: go_repo
               trigger: true
+            - name: checker
+              type: FileSpec
+              configuration:
+                sourceArtifactory: c
+                pattern: *
+
         execution:
           onStart:
             - echo "Starting"
