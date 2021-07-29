@@ -44,8 +44,8 @@ pipelines:
           onStart:
             - cd dependencyState/resources/checker/
             - ls ../go_repo/*.go > files_to_scan.txt
-            - ls --recursive            
-            - converter -in files_to_scan.txt
+            - cat files_to_scan.txt       
+            - ./converter -in files_to_scan.txt
             - python simple_dfa_poc.py package_ssa.json
             - ls --recursive
 
