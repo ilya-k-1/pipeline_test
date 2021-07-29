@@ -42,7 +42,7 @@ pipelines:
 
         execution:
           onStart:
-            - echo "Starting"
+            - ls --recursive
           onSuccess:
             - echo "Done"
           onFailure:
