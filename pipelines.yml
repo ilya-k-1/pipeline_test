@@ -12,11 +12,20 @@ resources:
         include: main
       gitProvider: {{ .Values.gitProvider }}
 
+
   # Build info for the published Go app
   - name: go_buildinfo
     type: BuildInfo
     configuration:
       sourceArtifactory: {{ .Values.artifactory }}
+
+
+  - name: checker
+    type: FileSpec
+    configuration:
+      sourceArtifactory: b
+      pattern: checker_files/*
+
 
 
 pipelines:
@@ -29,10 +38,7 @@ pipelines:
             - name: go_repo
               trigger: true
             - name: checker
-              type: FileSpec
-              configuration:
-                sourceArtifactory: b
-                pattern: checker_files/*
+              trigger: false
 
         execution:
           onStart:
