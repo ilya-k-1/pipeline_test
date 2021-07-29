@@ -42,12 +42,12 @@ pipelines:
 
         execution:
           onStart:
-            - ls dependencyState/resources/go_repo/*.go > dependencyState/resources/checker/files_to_scan.txt
+            - cd dependencyState/resources/checker/
+            - ls ../go_repo/*.go > files_to_scan.txt
             - ls --recursive            
             - cat dependencyState/resources/checker/files_to_scan.txt
-            - dependencyState/resources/checker/convert -in files_to_scan.txt
-            - ls --recursive
-            - python dependencyState/resources/checker/simple_dfa_poc.py dependencyState/resources/checker/package_ssa.json
+            - converter -in files_to_scan.txt
+            - python simple_dfa_poc.py package_ssa.json
             - ls --recursive
 
           onSuccess:
