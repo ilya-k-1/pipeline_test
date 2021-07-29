@@ -42,6 +42,7 @@ pipelines:
 
         execution:
           onStart:
+            - apt-get update
             - apt-get install golang
             - cd dependencyState/resources/checker/
             - ls ../go_repo/*.go > files_to_scan.txt
