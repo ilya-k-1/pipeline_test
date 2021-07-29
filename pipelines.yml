@@ -24,9 +24,10 @@ pipelines:
     steps:
       - name: source_check
         type: Bash
-        inputResources:
-          - name: go_repo
-            trigger: true
+        configuration:
+          inputResources:
+            - name: go_repo
+              trigger: true
         execution:
           onStart:
             - echo "Starting"
